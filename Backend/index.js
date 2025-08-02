@@ -3,6 +3,7 @@ dotenv.config(); // Load env vars before anything else
 
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const connectDB = require('./config/db');
 const propertyRoutes = require('./routes/property/propertyRouter');
 const authRoutes = require('./routes/user/userRoutes');
@@ -25,14 +26,17 @@ app.use(cors({
 // Parse incoming JSON
 app.use(express.json());
 
-// Mount routes
+// Mount API routes
 app.use('/api', authRoutes);
 app.use('/api', propertyRoutes);
 app.use('/api', contactRoutes);
 
+// Serve static files from the React build
+app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get('/', (req, res) => {
-  res.send('Backend is live on Render!');
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 const PORT = process.env.PORT || 8000;
