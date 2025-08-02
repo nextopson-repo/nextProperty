@@ -16,7 +16,7 @@ export default function AllContacts() {
     setLoading(true);
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_BASE_URL}?sort=${sort}&search=${search}`
+        `https://nextproperty-rfgj.onrender.com/api/contact?sort=${sort}&search=${search}`
       );
       const data = await res.json();
       if (data.success) {

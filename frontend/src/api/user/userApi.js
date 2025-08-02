@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = "https://nextproperty-rfgj.onrender.com/api";
 
 // Signup API using fetch
 export const signupUser = async ({ name, email, password }) => {
@@ -55,6 +55,7 @@ export const logoutUser = async () => {
 
   // Clear local token immediately
   localStorage.removeItem("token");
+  localStorage.removeItem("user");
   window.dispatchEvent(new Event("storage"));
 
   try {
@@ -75,11 +76,10 @@ export const logoutUser = async () => {
 
     return data;
   } catch (err) {
-    // Just log — don’t break logout
+    // Just log — don't break logout
     console.warn("Logout request failed:", err.message || err);
   }
 };
-
 
 export const getUserProfile = async () => {
   const token = localStorage.getItem("token");
@@ -92,6 +92,7 @@ export const getUserProfile = async () => {
     const res = await fetch(`${API_BASE_URL}/profile`, {
       method: "GET",
       headers: {
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     });

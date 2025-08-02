@@ -14,17 +14,9 @@ connectDB();
 // Initialize express app
 const app = express();
 
-// Setup CORS with tooling support
-const allowedOrigins = process.env.CORS_ORIGINS?.split(',') || [];
-
+// Setup CORS to allow all origins for development
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: '*', // Allow all origins
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],

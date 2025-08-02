@@ -14,7 +14,7 @@ export default function Contact() {
 
     const formData = { name, email, message };
     try {
-      const res = await fetch(import.meta.env.VITE_API_BASE_URL, {
+      const res = await fetch("https://nextproperty-rfgj.onrender.com/api/contect", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

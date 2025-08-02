@@ -1,10 +1,10 @@
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
+const BASE_URL = "https://nextproperty-rfgj.onrender.com/api";
 
 // Helper to get auth headers
 const getAuthHeaders = () => {
   const token = localStorage.getItem('token');
   return {
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   };
 };
@@ -15,6 +15,9 @@ export const createProperty = async (formData) => {
 
     const response = await fetch(`${BASE_URL}/properties`, {
       method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       body: formData, 
     });
 
@@ -31,15 +34,12 @@ export const createProperty = async (formData) => {
   }
 };
 
-// 🟡 GET single property by ID
+// GET single property by ID
 export const getPropertyById = async (id) => {
   try {
     const response = await fetch(`${BASE_URL}/properties/${id}`, {
       method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        ...getAuthHeaders(),
-      },
+      headers: getAuthHeaders(),
     });
 
     const data = await response.json();
@@ -53,10 +53,12 @@ export const getPropertyById = async (id) => {
 // UPDATE property by ID (with image support)
 export const updateProperty = async (id, formData) => {
   try {
+    const token = localStorage.getItem("token");
+    
     const response = await fetch(`${BASE_URL}/properties/${id}`, {
       method: "PUT",
       headers: {
-        ...getAuthHeaders(),
+        Authorization: `Bearer ${token}`,
       },
       body: formData,
     });
@@ -75,16 +77,14 @@ export const updateProperty = async (id, formData) => {
 };
 
 // DELETE property by ID
-// propertyApi.js
-
 export const deleteProperty = async (id) => {
   const token = localStorage.getItem("token");
-  console.log("Using token:", token); // Add this!
 
   try {
     const response = await fetch(`${BASE_URL}/properties/${id}`, {
       method: "DELETE",
       headers: {
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
     });
@@ -103,12 +103,14 @@ export const deleteProperty = async (id) => {
   }
 };
 
+// GET all public properties
 export const getAllPublicProperties = async () => {
   try {
     const response = await fetch(`${BASE_URL}/properties`, {
       method: "GET",
-      // No Authorization needed if endpoint is truly public.
-      // Remove headers unless your backend requires auth even for "public" properties.
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
 
     const data = await response.json();
