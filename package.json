@@ -1,0 +1,31 @@
+{
+  "name": "nextproperty-fullstack",
+  "version": "1.0.0",
+  "description": "NextProperty - Full Stack Property Management Application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd Backend && npm run start",
+    "frontend": "cd frontend && npm run dev",
+    "install-all": "npm install && cd Backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "property",
+    "real-estate",
+    "fullstack",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "NextProperty Team",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+} 
