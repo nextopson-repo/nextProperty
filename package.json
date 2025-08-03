@@ -10,7 +10,8 @@
     "install-all": "npm install && cd Backend && npm install && cd ../frontend && npm install",
     "build": "cd frontend && npm run build",
     "build-all": "cd frontend && npm run build && cd .. && cp -r frontend/dist Backend/dist",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "start:prod": "cd Backend && node index.js"
   },
   "keywords": [
     "property",

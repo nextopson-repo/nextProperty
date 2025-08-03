@@ -1,4 +1,4 @@
-const BASE_URL = "https://nextproperty-rfgj.onrender.com/api";
+const BASE_URL = "http://localhost:8000/api";
 
 // Helper to get auth headers
 const getAuthHeaders = () => {
