@@ -16,7 +16,7 @@ export default function NavBar() {
       const user = JSON.parse(localStorage.getItem("user"));
       const token = localStorage.getItem("token");
       setIsAdminLoggedIn(
-        !!token && user?.email === import.meta.env.VITE_ADMIN_EMAIL
+        token && user?.email 
       );
     };
 
