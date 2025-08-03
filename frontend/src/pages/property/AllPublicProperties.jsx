@@ -99,7 +99,7 @@ const AllPublicProperties = () => {
     checkMobile();
   }, []);
 
-  const phoneNumber = "1234567890";
+  const phoneNumber = "8989245824";
 
   const handleSubFilterChange = (type, value) => {
     if (type === "type") setTypeFilter(value);
