@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://nextproperty-rfgj.onrender.com/api";
+import { API_BASE_URL, apiCall } from '../../config/api.js';
 
 // Signup API using fetch
 export const signupUser = async ({ name, email, password }) => {
@@ -51,33 +51,12 @@ export const loginUser = async ({ email, password }) => {
 };
 
 export const logoutUser = async () => {
-  const token = localStorage.getItem("token");
-
-  // Clear local token immediately
-  localStorage.removeItem("token");
-  localStorage.removeItem("user");
-  window.dispatchEvent(new Event("storage"));
-
   try {
-    // Optional: try to notify backend
-    const res = await fetch(`${API_BASE_URL}/logout`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) {
-      console.warn("Server logout failed:", data.message || "Unknown error");
-    }
-
-    return data;
-  } catch (err) {
-    // Just log — don't break logout
-    console.warn("Logout request failed:", err.message || err);
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.dispatchEvent(new Event("storage"));
+  } catch (error) {
+    console.error("Logout error:", error);
   }
 };
 
