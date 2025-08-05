@@ -211,7 +211,7 @@ const AllPublicProperties = () => {
                       <option value="">Select Type</option>
                       <option value="Flat">Flat</option>
                       <option value="House">House</option>
-                      <option value="Apartment">Apartment</option>
+                      <option value="Hotel">Hotel</option>
                       <option value="office space">office space</option>
                       {/*    <option value="Flats">Flats</option>
                       <option value="Builder Floors">Builder Floors</option>

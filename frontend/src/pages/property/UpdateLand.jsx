@@ -151,7 +151,7 @@ const UpdateLand = () => {
       <option value="">Select Property Type</option>
       <option value="Flat">Flat</option>
       <option value="House">House</option>
-      <option value="Apartment">Apartment</option>
+      <option value="Hotel">Hotel</option>
       <option value="office space">office space</option>
     </select>
   </div>

@@ -102,9 +102,9 @@
 ## 📊 Current Data
 
 ### Properties in Database
-1. **Beautiful 3BHK Apartment** (Mumbai)
+1. **Beautiful 3BHK Hotel** (Mumbai)
    - Price: ₹85,00,000
-   - Type: Apartment
+   - Type: Hotel
    - Status: Sale
 
 2. **Luxury 2BHK Villa** (Bangalore)

@@ -37,7 +37,7 @@
   { image: house1, title: "Modern Villa in Mumbai", price: "₹85,00,000" },
   { image: house2, title: "Family Home in Bangalore", price: "₹65,00,000" },
   { image: house3, title: "Luxury Condo in Pune", price: "₹72,50,000" },
-  { image: house4, title: "Spacious 3BHK Apartment", price: "₹55,00,000" },
+  { image: house4, title: "Spacious 3BHK Hotel", price: "₹55,00,000" },
 ];
 
 
