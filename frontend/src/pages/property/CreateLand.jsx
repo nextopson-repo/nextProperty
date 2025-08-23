@@ -212,18 +212,18 @@ const CreateLand = () => {
             >
               <option value="">Select Landmark</option>
               {(formData.location === "bhopal"
-                ? [
-                  "  Ashoka ",
-                  " Indrapuri",
-                  " Ayodhya bypass",
-                  " Saket ",
-                  " Hoshangabad road",
-                  " Shahpura ",
-                  "  Salaiya",
-                  " Kolar",
-                  " Chunabhatti ",
-                  "  New market ",
-                  " Arera colony",
+                ?[
+                  "Ashoka",
+                  "Indrapuri",
+                  "Ayodhya bypass",
+                  "Saket",
+                  "Hoshangabad road",
+                  "Shahpura",
+                  "Salaiya",
+                  "Kolar",
+                  "Chunabhatti",
+                  "New market",
+                  "Arera colony",
                 ]
                 : [
                   "  Ashoka ",

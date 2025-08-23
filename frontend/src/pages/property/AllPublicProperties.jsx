@@ -286,11 +286,17 @@ const AllPublicProperties = () => {
 
   {(cityFilter === "bhopal"
     ? [
-        "Mp nagar", "Kolar", "Hoshangabad road", "Shahpura", "Chunabhatti",
-        "Ashoka garden", "Rachna Nagar", "Shivaji nagar", "Saket nagar",
-        "Bawadiya kalan", "Gulmohar", "Punjabi bagh", "Bittan market",
-        "Gautam nagar", "Old subhash nagar", "Arera colony", "Indrapuri",
-        "Rohit nagar"
+      "Ashoka",
+      "Indrapuri",
+      "Ayodhya bypass",
+      "Saket",
+      "Hoshangabad road",
+      "Shahpura",
+      "Salaiya",
+      "Kolar",
+      "Chunabhatti",
+      "New market",
+      "Arera colony",
       ]
     : cityFilter === "indore"
     ? [
