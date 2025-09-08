@@ -5,6 +5,11 @@ const getApiBaseUrl = () => {
     return import.meta.env.VITE_API_BASE_URL;
   }
   
+  // Production fallback - use relative path since frontend and backend are served from same domain
+  if (import.meta.env.PROD) {
+    return "/api";
+  }
+  
   // Development fallback
   return "http://localhost:8000/api";
 };

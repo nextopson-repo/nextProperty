@@ -4,7 +4,24 @@ services:
     env: node
     plan: free
     buildCommand: npm run install-all && npm run build-all
-    startCommand: cd Backend && node index.js
+    startCommand: npm run start:prod
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
-        value: production 
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://nextproperty-fullstack.onrender.com
+      - key: VITE_API_BASE_URL
+        value: /api 

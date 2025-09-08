@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'nextproperty',
+    name: 'nextproperty-fullstack',
     script: './Backend/index.js',
     cwd: process.cwd(),
     instances: 1,
@@ -8,8 +8,12 @@ module.exports = {
     watch: false,
     max_memory_restart: '1G',
     env: {
-      NODE_ENV: 'production',
+      NODE_ENV: 'development',
       PORT: 8000
+    },
+    env_production: {
+      NODE_ENV: 'production',
+      PORT: process.env.PORT || 10000
     },
     error_file: './logs/err.log',
     out_file: './logs/out.log',

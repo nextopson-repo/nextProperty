@@ -24,4 +24,5 @@ export default defineConfig({
     // Ensure environment variables are available
     'process.env': {},
   },
+  base: '/', // Ensure proper base path for deployment
 })
