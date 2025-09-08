@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: nextproperty-fullstack
+    name: nextproperty-2
     env: node
     plan: free
     buildCommand: npm run install-all && npm run build-all
@@ -22,6 +22,6 @@ services:
       - key: CLOUDINARY_API_SECRET
         sync: false
       - key: ALLOWED_ORIGINS
-        value: https://nextproperty-fullstack.onrender.com
+        value: https://nextproperty-2.onrender.com
       - key: VITE_API_BASE_URL
         value: /api 

@@ -7,6 +7,13 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true, // Allow external connections
+    allowedHosts: [
+      'localhost',
+      '127.0.0.1',
+      'nextproperty-fullstack.onrender.com',
+      'nextproperty-2.onrender.com',
+      '.onrender.com' // Allow all Render subdomains
+    ],
   },
   build: {
     outDir: 'dist',
