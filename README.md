@@ -133,7 +133,7 @@ CLOUDINARY_API_SECRET=your-cloudinary-secret
 
 ## 🚀 Deployment
 
-### Frontend (Vercel)
+#### Frontend (Vercel)
 1. Build the frontend: `npm run build`
 2. Deploy to Vercel or your preferred platform
 
@@ -144,6 +144,9 @@ CLOUDINARY_API_SECRET=your-cloudinary-secret
 ## 📝 License
 
 ISC License
+
+
+
 
 ## 👥 Contributing
 
